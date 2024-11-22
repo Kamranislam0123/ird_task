@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react';
-import { Sidebar } from '@/components/sidebar';
+import { Category } from '@/components/categories';
 import { MainContent } from '@/components/main-content';
 import { SettingsPanel } from '@/components/settings-panel';
-import { Category } from '@/components/categories';
+import { Sidebar } from '@/components/sidebar';
+import { useState } from 'react';
 
 export default function DuaPage() {
   // State to hold the selected category ID

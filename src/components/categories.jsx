@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 
-export function Category({ onCategorySelect }: any) {
+export function Category({ onCategorySelect }) {
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [duas, setDuas] = useState([]); // Store duas for the selected subcategory
@@ -62,7 +62,7 @@ export function Category({ onCategorySelect }: any) {
     category.cat_name_en.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleCategoryClick = (categoryId: any) => {
+  const handleCategoryClick = (categoryId) => {
     if (categoryId === selectedCategoryId) {
       setSelectedCategoryId(null);
       setSubCategories([]);
@@ -74,7 +74,7 @@ export function Category({ onCategorySelect }: any) {
     }
   };
 
-  const handleSubCategoryClick = (subCategoryId: any) => {
+  const handleSubCategoryClick = (subCategoryId) => {
     setSelectedSubCategoryId(subCategoryId); // Set selected subcategory
     onCategorySelect(subCategoryId); // Notify parent component of subcategory selection
   };
