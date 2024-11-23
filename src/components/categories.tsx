@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 
-export function Category({ onCategorySelect }) {
+export function Category({ onCategorySelect }:any) {
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [duas, setDuas] = useState([]); // Store duas for the selected subcategory
@@ -11,6 +11,8 @@ export function Category({ onCategorySelect }) {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [selectedSubCategoryId, setSelectedSubCategoryId] = useState(null); // Track the selected subcategory
   const [openCategoryId, setOpenCategoryId] = useState<number | null>(null);
+
+
 
   useEffect(() => {
     fetch("http://localhost:5000/category")
@@ -62,7 +64,7 @@ export function Category({ onCategorySelect }) {
     category.cat_name_en.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleCategoryClick = (categoryId) => {
+  const handleCategoryClick = (categoryId:any) => {
     if (categoryId === selectedCategoryId) {
       setSelectedCategoryId(null);
       setSubCategories([]);
@@ -74,7 +76,7 @@ export function Category({ onCategorySelect }) {
     }
   };
 
-  const handleSubCategoryClick = (subCategoryId) => {
+  const handleSubCategoryClick = (subCategoryId:any) => {
     setSelectedSubCategoryId(subCategoryId); // Set selected subcategory
     onCategorySelect(subCategoryId); // Notify parent component of subcategory selection
   };

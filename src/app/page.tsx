@@ -12,7 +12,7 @@ export default function DuaPage() {
   
 
   // Callback function that updates the selected category ID
-  const handleCategorySelect = (categoryId) => {
+  const handleCategorySelect = (categoryId:any) => {
     setSelectedCategoryId(categoryId);
   };
 
